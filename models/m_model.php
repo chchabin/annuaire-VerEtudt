@@ -46,6 +46,13 @@ class PdoBridge
         }
         return PdoBridge::$monPdoBridge;
     }
-
+    public function getLesMembres()
+    {
+/*        $sql = '';
+        $req = PdoBridge::$monPdo->prepare($sql);
+        $req->execute();
+        $d = $req->fetchALL(PDO::FETCH_ASSOC);
+        return $d;*/
+    }
     
 }
