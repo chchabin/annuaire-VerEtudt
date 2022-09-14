@@ -33,9 +33,9 @@ Ce qui vous est demandé de faire :
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Acteur déclencheur :**   l’utilisateur                                                                                                                                                                                                 |
 | **Scénario nominal :**  <p>1. L’utilisateur demande à afficher les membres. </p><p>2. Le système retourne le vue listemembres </p><p>3. L’utilisateur choisi de retourner à l’accueil. </p><p>4. Le système retourne la vue accueil </p> |
-| <p>**Extensions :** </p> **Exceptions**                                                                                                                                                                                                  |
-Gestion de l’action lister
+| <p>**Extensions :** </p> **Exceptions**                                                                                                                                                                                                  |  
 
+Gestion de l’action lister
 1. Le système récupère les données de la requête getLesMembres
 2. Le système affiche la vue listemembres
 3. Les données des membres sont récupérées dans la vue.
@@ -55,7 +55,7 @@ Ce qui vous est demandé de faire :
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Acteur déclencheur :**   l’utilisateur                                                                                                                                                                                                |
 | <p>**Scénario nominal :**  </p><p>1. L’utilisateur demande à saisir un membre. </p><p>2. Le système retourne le formulaire de saisie </p><p>3. L’utilisateur valide sa saisie. </p><p>4. Le système appel le contrôle de la saisie </p> |
-| ><p>**Extensions :**</p>  **Exceptions**                                                                                                                                                                                                |
+| <p>**Extensions :**</p>  **Exceptions**                                                                                                                                                                                                 |
 
 
 ## Etape 5 : Création de la fonctionalité suprimer membre
@@ -74,7 +74,7 @@ Ce qui vous est demandé de faire :
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Acteur déclencheur :**   l’utilisateur                                                                                                                                                                                                                       |
 | <p>**Scénario nominal :**  </p><p>1. L’utilisateur demande à supprimer un membre. </p><p>2. Le système retourne le formulaire de saisie </p><p>3. L’utilisateur choisi le membre et valide sa saisie. </p><p>4. Le système appel le contrôle de la saisie </p> |
-| ><p>**Extensions :**</p>  **Exceptions**                                                                                                                                                                                                                       |
+| <p>**Extensions :**</p>  **Exceptions**                                                                                                                                                                                                                        |
 # 2- Quelques explications
 
 ## a - Point d'entrée unique
