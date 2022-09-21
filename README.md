@@ -11,71 +11,95 @@ Pour l'instant cette application est locale.
 1. Faire un clone du repository 
 > git clone https://github.com/chchabin/annuaire-VerEtudt.git
 2. Lancer le script `annuaire.sql`
+3. Lisez la partie 2 pour comprendre les principes du MVC.
 
 
-## Mission 2 : Découverte de l'application
-Lisez la partie 2 pour comprendre les principes du MVC.
 
-## Mission 3 : Création de la fonctionalité liste membre
-Ce qui vous est demandé de faire :
+## Mission 2 : Création de la fonctionalité liste membre
+#### a - Maquette
+La maquette de la vue `v_listemembres.php` doit avoir cette apparence :
+![vueListeMembre](images/vueListeMembre.PNG) 
+
+#### b - Fiches descriptives du cas d'utilisation à réaliser
+
+| **PROJET :**   Application  web de afficher membre                               | 
+|----------------------------------------------------------------------------------|
+| **Description cas d’utilisation**                                                |
+| **Nom cas d’utilisation :**   Saisir les membres                                 |
+| **Acteur déclencheur :**   l’utilisateur                                         |
+| **Scénario nominal :**                                                           |
+| 1. L’utilisateur demande à saisir un membre.                                     |
+| 2. Le système retourne le formulaire de saisie                                   |
+| 3. L’utilisateur saisit les informations et valide sa saisie.                    |
+| 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
+| **Extensions :**                                                                 |
+| **Exceptions :**                                                                 |
+
+**Ce qui vous est demandé de faire :**
 1. dans le fichier `m_model.php` trouvez la requête qui récupère tous les noms et prénom des membres.
 2. Testez votre résultat.
 3. dans le fichier `v_listemembres.php` construisez un tableau HTML et remplissez les lignes dynamiquement à partir de la variable `$les_membres` qui envoyée par le contrôleur.
-La maquette de la vue `v_listemembres.php` doit avoir cette apparence :  
 
-   ![<img src="images/tp-php/vueListeMembre.PNG" width="200"/>](images/vueListeMembre.PNG)  
-      Fiches descriptives du cas d'utilisation à réaliser
+## Mission 3 : Création de la fonctionalité saisir membre
+#### a - Maquette
+La maquette de la vue doit avoir cette apparence :  
+![v_saisieMembre](images/vueSaisieMembre.PNG)
+La maquette de résultat doit avoir cette apparence:
+![v_saisieResult](images/vueSaisieResult.PNG)
+#### b - Fiches descriptives du cas d'utilisation à réaliser
 
-| **PROJET :**   Application  web de afficher membre | **Description cas d’utilisation** |
-|----------------------------------------------------|-----------------------------------|
+| **PROJET :**   Application  web de afficher membre                               | 
+|----------------------------------------------------------------------------------|
+| **Description cas d’utilisation**                                                |
+| **Nom cas d’utilisation :**   Saisir les membres                                 |
+| **Acteur déclencheur :**   l’utilisateur                                         |
+| **Scénario nominal :**                                                           | 
+| 1. L’utilisateur demande à saisir un membre.                                     |
+| 2. Le système retourne le formulaire de saisie                                   |
+| 3. L’utilisateur saisit les informations et valide sa saisie.                    |
+| 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
+| **Extensions :**                                                                 |
+| **Exceptions :**                                                                 |
 
-
-| **Nom cas d’utilisation :**   Afficher les membres                                                                                                                                                                                       |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Acteur déclencheur :**   l’utilisateur                                                                                                                                                                                                 |
-| **Scénario nominal :**  <p>1. L’utilisateur demande à afficher les membres. </p><p>2. Le système retourne le vue listemembres </p><p>3. L’utilisateur choisi de retourner à l’accueil. </p><p>4. Le système retourne la vue accueil </p> |
-| <p>**Extensions :** </p> **Exceptions**                                                                                                                                                                                                  |  
-
-Gestion de l’action lister
-1. Le système récupère les données de la requête getLesMembres
-2. Le système affiche la vue listemembres
-3. Les données des membres sont récupérées dans la vue.
-
-## Mission 4 : Création de la fonctionalité saisir membre
-Ce qui vous est demandé de faire :
+**Ce qui vous est demandé de faire :**
 1. dans le fichier `m_model.php` créez la fonction `insertMembre()` pour insérer un nouveau membre dans la base de données.
-2. Créez un fichier `v_saisiemembre.php` et construisez un formulaire avec le nom et le prénom à saisir. La maquette de la vue doit avoir cette apparence :![v_saisieMembre](images/vueSaisieMembre.PNG)
-3. Affichez le résultat de la saisie dans la vue `accueil.php`  
-   Fiches descriptives du cas d'utilisation à réaliser
-
-| **PROJET :**   Application  web de saisie membre | **Description cas d’utilisation** |
-|--------------------------------------------------|-----------------------------------|
+2. dans le fichier `v_saisiemembre.php` et construisez un formulaire avec le nom et le prénom à saisir.
+3. modifiez le cas `controlesaisie` dans le contrôleur pour récupérer toutes les variables.
+4. modifiez le message envoyé par le contrôleur dans la vue `accueil.php`.
 
 
-| **Nom cas d’utilisation :**   Saisir les membres                                                                                                                                                                                        |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Acteur déclencheur :**   l’utilisateur                                                                                                                                                                                                |
-| <p>**Scénario nominal :**  </p><p>1. L’utilisateur demande à saisir un membre. </p><p>2. Le système retourne le formulaire de saisie </p><p>3. L’utilisateur valide sa saisie. </p><p>4. Le système appel le contrôle de la saisie </p> |
-| <p>**Extensions :**</p>  **Exceptions**                                                                                                                                                                                                 |
+## Mission 4 : Création de la fonctionalité supprimer membre
+>Les membres seront supprimés un par un.
+#### a - Maquette
+La maquette de la vue doit avoir cette apparence :   
+![vueSupprimerMembre](images/vueSupprimerMembre.PNG)
+La maquette de résultat doit avoir cette apparence:
+![vueSupprimerResult](images/vueSupprimerResult.PNG)
 
 
-## Mission 5 : Création de la fonctionalité suprimer membre
-Les membres seront supprimés un par un.
-Ce qui vous est demandé de faire :
-1. dans le fichier `m_model.php` créez la fonction `insertMembre()`
-2. créez un fichier `v_deletemembre.php` dans lequel l'utilisateur chois le membre à supprimer dans une liste, puis valide la suppression
-3.  Affichez le résultat de la saisie dans la vue `accueil.php`  
-    Fiches descriptives du cas d'utilisation à réaliser.
+#### b - Fiches descriptives du cas d'utilisation à réaliser
 
-| **PROJET :**   Application  web de supprimer membre | **Description cas d’utilisation** |
-|-----------------------------------------------------|-----------------------------------|
+| **PROJET :**   Application  web de afficher membre                               | 
+|----------------------------------------------------------------------------------|
+| **Description cas d’utilisation**                                                |
+| **Nom cas d’utilisation :**   Supprimer un membre                                |
+| **Acteur déclencheur :**   l’utilisateur                                         |
+| **Scénario nominal :**                                                           | 
+| 1. L’utilisateur demande à supprimer un membre.                                  |
+| 2. Le système retourne le formulaire de saisie                                   |
+| 3.  L’utilisateur choisi le membre et valide sa saisie.                          |
+| 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
+| **Extensions :**                                                                 |
+| **Exceptions :**                                                                 |
 
-
-| **Nom cas d’utilisation :**   Saisir les membres                                                                                                                                                                                                               |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Acteur déclencheur :**   l’utilisateur                                                                                                                                                                                                                       |
-| <p>**Scénario nominal :**  </p><p>1. L’utilisateur demande à supprimer un membre. </p><p>2. Le système retourne le formulaire de saisie </p><p>3. L’utilisateur choisi le membre et valide sa saisie. </p><p>4. Le système appel le contrôle de la saisie </p> |
-| <p>**Extensions :**</p>  **Exceptions**                                                                                                                                                                                                                        |
+**Ce qui vous est demandé de faire :**                                 
+1. dans le fichier `m_model.php` créez la fonction `deleteMembre()` qui prendra en paramètre l'id du membre,
+2. créez un fichier `v_deletemembre.php` dans lequel l'utilisateur chois le membre à supprimer dans une liste, puis valide la suppression,
+3. dans le contrôleur, créez le cas `supprimer` qui affiche la vue `v_deletemembre.php`,
+4. testez votre travail,
+5. dans le contrôleur, créez le cas `controledelete` pour récupérer les informations du formulaire et lancer la suppression dans le modèle.
+6. Affichez le résultat de la saisie dans la vue `accueil.php` (prevoyez le code dans le cas `controledelete` en conséquence).
+   pression
 # 2- Quelques explications
 
 ## a - Point d'entrée unique
