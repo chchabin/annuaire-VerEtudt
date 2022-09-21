@@ -1,28 +1,29 @@
 # 1 - Annuaire version étudiant
-Un club de bridge a souhaité créer une application pour recencer tous ses membres. Un étudiant en informatique a durant son stage
-créer un debut d'application.  
+Un club de bridge a souhaité créer une application pour recencer tous ses membres lors d'une compétition. 
+Un étudiant en informatique a durant son stage créer un debut d'application.  
 Les caractéristiques sont les suivantes :
 1. Langage : PHP, HTML, CSS
 2. Pattern :  MVC
 3. Framework css : [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 Pour l'instant cette application est locale. 
 
-## Etape 1 : Installation de l'application
+## Mission 1 : Installation de l'application
 1. Faire un clone du repository 
 > git clone https://github.com/chchabin/annuaire-VerEtudt.git
 2. Lancer le script `annuaire.sql`
 
 
-## Etape 2 : Découverte de l'application
+## Mission 2 : Découverte de l'application
 Lisez la partie 2 pour comprendre les principes du MVC.
 
-## Etape 3 : Création de la fonctionalité liste membre
+## Mission 3 : Création de la fonctionalité liste membre
 Ce qui vous est demandé de faire :
 1. dans le fichier `m_model.php` trouvez la requête qui récupère tous les noms et prénom des membres.
 2. Testez votre résultat.
-   3. dans le fichier `v_listemembres.php` construisez un tableau HTML et remplissez les lignes dynamiquement à partir de la variable `$les_membres` qui envoyée par le contrôleur.
-   La maquette de la vue `v_listemembres.php` doit avoir cette apparence :
-   ![v_listemembres](images/vueListeMembre.PNG)  
+3. dans le fichier `v_listemembres.php` construisez un tableau HTML et remplissez les lignes dynamiquement à partir de la variable `$les_membres` qui envoyée par le contrôleur.
+La maquette de la vue `v_listemembres.php` doit avoir cette apparence :  
+
+   ![<img src="images/tp-php/vueListeMembre.PNG" width="200"/>](images/vueListeMembre.PNG)  
       Fiches descriptives du cas d'utilisation à réaliser
 
 | **PROJET :**   Application  web de afficher membre | **Description cas d’utilisation** |
@@ -40,7 +41,7 @@ Gestion de l’action lister
 2. Le système affiche la vue listemembres
 3. Les données des membres sont récupérées dans la vue.
 
-## Etape 4 : Création de la fonctionalité saisir membre
+## Mission 4 : Création de la fonctionalité saisir membre
 Ce qui vous est demandé de faire :
 1. dans le fichier `m_model.php` créez la fonction `insertMembre()` pour insérer un nouveau membre dans la base de données.
 2. Créez un fichier `v_saisiemembre.php` et construisez un formulaire avec le nom et le prénom à saisir. La maquette de la vue doit avoir cette apparence :![v_saisieMembre](images/vueSaisieMembre.PNG)
@@ -58,7 +59,7 @@ Ce qui vous est demandé de faire :
 | <p>**Extensions :**</p>  **Exceptions**                                                                                                                                                                                                 |
 
 
-## Etape 5 : Création de la fonctionalité suprimer membre
+## Mission 5 : Création de la fonctionalité suprimer membre
 Les membres seront supprimés un par un.
 Ce qui vous est demandé de faire :
 1. dans le fichier `m_model.php` créez la fonction `insertMembre()`

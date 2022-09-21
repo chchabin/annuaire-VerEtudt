@@ -1,22 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: christophe
- * Date: 18/10/2018
- * Time: 14:55
- */
 
 class PdoBridge
 {
-    private static $serveur = 'mysql:host=localhost';
-    private static $bdd = 'dbname=annuaire';
-    private static $user = 'root';
-    private static $mdp = '';
+    private static string $serveur = 'mysql:host=localhost';
+    private static string $bdd = 'dbname=annuaire';
+    private static string $user = 'root';
+    private static string $mdp = '';
     private static $monPdoBridge = null;
     /**
      * @var PDO   <--- need by PhpStorm to find Methods of PDO
      */
-    private static $monPdo;
+    private static PDO $monPdo;
 
     /**
      * Constructeur privé, crée l'instance de PDO qui sera sollicitée
@@ -46,13 +40,30 @@ class PdoBridge
         }
         return PdoBridge::$monPdoBridge;
     }
+
     public function getLesMembres()
     {
-/*        $sql = '';
-        $req = PdoBridge::$monPdo->prepare($sql);
-        $req->execute();
-        $d = $req->fetchALL(PDO::FETCH_ASSOC);
-        return $d;*/
+        // modifiez la requête sql
+        $sql = 'SELECT id FROM membres';
+        $lesLignes = PdoBridge::$monPdo->query($sql);
+        return $lesLignes->fetchALL(PDO::FETCH_ASSOC);
     }
-    
+
+    public function getMaxId()
+    {
+        // modifiez la requête sql
+        $req = "SELECT id AS maxi FROM membres";
+        $res = PdoBridge::$monPdo->query($req);
+        $lesLignes = $res->fetch();
+        return 1 + intval($lesLignes["maxi"]);
+    }
+
+    public function insertMembre($nom, $prenom)
+    {
+        // modifiez la requête sql
+        $id = $this->getMaxId();
+        // modifiez la requête sql
+        $sql = 'INSERT INTO membres Value($id)';
+        $req = PdoBridge::$monPdo->exec($sql);
+    }
 }
