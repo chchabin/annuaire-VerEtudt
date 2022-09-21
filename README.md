@@ -34,6 +34,10 @@ La maquette de la vue `v_listemembres.php` doit avoir cette apparence :
 | 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
 | **Extensions :**                                                                 |
 | **Exceptions :**                                                                 |
+### c- fiches savoir
+[framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
+[la boucle foreach](http://chchabin.free.fr/php/php034ProgPhp_Boucles.html#bouclesforeach)  
+[les tableaux associatifs](http://chchabin.free.fr/php/php033ProgPhp_Tableaux.html#tableauAssociatif)  
 
 **Ce qui vous est demandé de faire :**
 1. dans le fichier `m_model.php` trouvez la requête qui récupère tous les noms et prénom des membres.
@@ -60,6 +64,9 @@ La maquette de résultat doit avoir cette apparence:
 | 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
 | **Extensions :**                                                                 |
 | **Exceptions :**                                                                 |
+### c- fiches savoir
+[framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
+[les formulaires](http://chchabin.free.fr/php/php044Transmission.html#transmissionFormRecup)
 
 **Ce qui vous est demandé de faire :**
 1. dans le fichier `m_model.php` créez la fonction `insertMembre()` pour insérer un nouveau membre dans la base de données.
@@ -91,6 +98,10 @@ La maquette de résultat doit avoir cette apparence:
 | 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
 | **Extensions :**                                                                 |
 | **Exceptions :**                                                                 |
+### c- fiches savoir
+[framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
+[les formulaires](http://chchabin.free.fr/php/php044Transmission.html#transmissionFormRecup)  
+[formulaire et select](http://chchabin.free.fr/php/php044Transmission.html#transmissionFormSelect)
 
 **Ce qui vous est demandé de faire :**                                 
 1. dans le fichier `m_model.php` créez la fonction `deleteMembre()` qui prendra en paramètre l'id du membre,
