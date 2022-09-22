@@ -22,18 +22,18 @@ La maquette de la vue `v_listemembres.php` doit avoir cette apparence :
 
 #### b - Fiches descriptives du cas d'utilisation à réaliser
 
-| **PROJET :**   Application  web de afficher membre                               | 
-|----------------------------------------------------------------------------------|
-| **Description cas d’utilisation**                                                |
-| **Nom cas d’utilisation :**   Saisir les membres                                 |
-| **Acteur déclencheur :**   l’utilisateur                                         |
-| **Scénario nominal :**                                                           |
-| 1. L’utilisateur demande à saisir un membre.                                     |
-| 2. Le système retourne le formulaire de saisie                                   |
-| 3. L’utilisateur saisit les informations et valide sa saisie.                    |
-| 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
-| **Extensions :**                                                                 |
-| **Exceptions :**                                                                 |
+| **PROJET :**   Application  web de afficher membre   | 
+|------------------------------------------------------|
+| **Description cas d’utilisation**                    |
+| **Nom cas d’utilisation :**   Afficher les membres   |
+| **Acteur déclencheur :**   l’utilisateur             |
+| **Scénario nominal :**                               |                                                                                                                                                                                          
+| 1. L’utilisateur demande à afficher les membres.     |
+| 2. Le système retourne le vue listemembres           |
+| 3. L’utilisateur choisi de retourner à l’accueil.    |
+| 4. Le système retourne la vue accueil                |
+| **Extensions :**                                     |
+| **Exceptions :**                                     | 
 ### c- fiches savoir
 [framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
 [la boucle foreach](http://chchabin.free.fr/php/php034ProgPhp_Boucles.html#bouclesforeach)  
