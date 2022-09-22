@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Hôte :                        127.0.0.1
--- Version du serveur:           10.1.34-MariaDB - mariadb.org binary distribution
+-- Hôte :                        localhost
+-- Version du serveur:           10.5.4-MariaDB-log - mariadb.org binary distribution
 -- SE du serveur:                Win64
--- HeidiSQL Version:             9.5.0.5295
+-- HeidiSQL Version:             10.2.0.5599
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -13,12 +13,10 @@
 
 
 -- Listage de la structure de la base pour annuaire
-DROP DATABASE IF EXISTS `annuaire`;
 CREATE DATABASE IF NOT EXISTS `annuaire` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `annuaire`;
 
 -- Listage de la structure de la table annuaire. membres
-DROP TABLE IF EXISTS `membres`;
 CREATE TABLE IF NOT EXISTS `membres` (
   `id` int(11) NOT NULL,
   `nom` varchar(59) DEFAULT NULL,
@@ -26,17 +24,17 @@ CREATE TABLE IF NOT EXISTS `membres` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Listage des données de la table annuaire.membres : ~16 rows (environ)
-DELETE FROM `membres`;
+-- Listage des données de la table annuaire.membres : ~9 rows (environ)
 /*!40000 ALTER TABLE `membres` DISABLE KEYS */;
 INSERT INTO `membres` (`id`, `nom`, `prenom`) VALUES
-	(4, 'Quatre', 'Quart'),
-	(5, 'Cinq', 'Cinq'),
-	(6, 'Six', 'Six'),
-	(7, 'Sept', 'Sept'),
-	(8, 'Huit', 'Huit'),
-	(9, 'Neuf', 'Neuf'),
-	(10, 'Dix', 'Dix');
+	(1, 'Sionne', 'Jacques'),
+	(2, 'Itechnique', 'Paule'),
+	(3, 'Hinique', 'Marthe'),
+	(4, 'Kiéss', 'Jacques'),
+	(5, 'Gnole', 'Guy'),
+	(6, 'Iversaire', 'Anne'),
+	(7, 'Bonnot', 'Jean'),
+	(9, 'Himum', 'Max');
 /*!40000 ALTER TABLE `membres` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
