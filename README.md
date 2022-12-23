@@ -8,10 +8,12 @@ Les caractéristiques sont les suivantes :
 Pour l'instant cette application est locale. 
 
 ## Mission 1 : Installation de l'application
-1. Faire un clone du repository 
-> git clone https://github.com/chchabin/annuaire-VerEtudt.git
-2. Lancer le script `annuaire.sql`
-3. Lisez la partie 2 pour comprendre les principes du MVC.
+1. Faire un fork de annuaire-VerEtudt sur [https://github.com/chchabin/annuaire-VerEtudt](https://github.com/chchabin/annuaire-VerEtudt)  
+   ![fork](images/fork.png)
+2. Faire un clone du repository 
+> git clone https://github.com/<votre nom>/annuaire-VerEtudt.git
+3. Lancer le script `annuaire.sql`
+4. Lisez la partie 2 pour comprendre les principes du MVC.
 
 
 
@@ -47,8 +49,8 @@ La maquette de la vue `v_listemembres.php` doit avoir cette apparence :
 ## Mission 3 : Création de la fonctionalité saisir membre
 #### a - Maquette
 La maquette de la vue doit avoir cette apparence :  
-![v_saisieMembre](images/vueSaisieMembre.PNG)
-La maquette de résultat doit avoir cette apparence:
+![v_saisieMembre](images/vueSaisieMembre.PNG)  
+La maquette de résultat doit avoir cette apparence:  
 ![v_saisieResult](images/vueSaisieResult.PNG)
 #### b - Fiches descriptives du cas d'utilisation à réaliser
 
@@ -79,8 +81,8 @@ La maquette de résultat doit avoir cette apparence:
 >Les membres seront supprimés un par un.
 #### a - Maquette
 La maquette de la vue doit avoir cette apparence :   
-![vueSupprimerMembre](images/vueSupprimerMembre.PNG)
-La maquette de résultat doit avoir cette apparence:
+![vueSupprimerMembre](images/vueSupprimerMembre.PNG)  
+La maquette de résultat doit avoir cette apparence:  
 ![vueSupprimerResult](images/vueSupprimerResult.PNG)
 
 
@@ -123,16 +125,36 @@ Il faut distinguer 2 cas :
 Par exemple vous pouvez avoir l'URL suivante si vous cliquez sur `Lister les membres` 
 > http://localhost/annuaire-VerEtudt/index.php?uc=gerer&action=lister
 ## La gestion de l'url
-Le fichier index.php va orienter le flux vers le contrôleur qui généralement est le fichier
+Le routage de l'URL se fait dans le fichier `index.php`. 
+Le tableau `$_REQUEST` récupère les valeurs de `uc` et de `action`.
+```php
+$uc = 'gerer'; ---------------------> // valeur par défaut du contrôleur  
+$action = 'accueil';----------------> // valeur par défaut de l'action   
+if (isset($_REQUEST['action'])) { -->//test si la variable action a une valeur   
+   $action=$_REQUEST['action'];  
+  }  
+if (isset($_REQUEST['uc'])) {------->//test si la variable uc a une valeur  
+    $uc=$_REQUEST['uc'];  
+    }  
+include "controllers/c_$uc.php";---->// appel du contrôleur correspondant  
+```
+Le fichier index.php va orienter le flux vers le contrôleur qui, par défaut, est le fichier
 >c_gerer.php  
 
-Dans le contrôleur, le programme exécutera la fonction correspondant au nom de l'action. Ici l'action est appelée via un `switch`
-
 ## b - L'écriture de l'action dans le contrôleur
+Dans le contrôleur, le programme exécutera la fonction correspondant au nom de l'action.
+Ici l'action est appelée via un `switch`  
 L'action va obtenir des données du modèle. Elle va les traiter et les envoyer à une vue. Voici un exemple
 ```php
+switch ($action) {
+     ⁝
+     case 'lister': {
         $les_membres=$pdo->getLesMembres(); // Appel de la fonction dans le modèle
         require 'views/v_listemembres.php'; // Appel de la vue à afficher
+        break;
+     }
+     ⁝
+}
 ```
 ## c - Le modèle
 Le modèle enregistre toutes les données, qu'elles viennent d'une base de données ou d'un tableau.  
@@ -150,7 +172,19 @@ Dans notre cas c'est la fonction `getLesMembres()` qui est appelée :
 ```
 ## d - La vue
 Elle reçoit les données et le met en forme selon les besoins du client.
-Ici c'est la vue `v_accueil` qui est appelée. Ele récupère les données de la variable `$message`
+Le contrôleur appel al vue `v_accueil` et envoie des données via la variable `$message`:
+```php
+switch ($action) {
+        case 'accueil':
+    {
+        $message="Ce site permet d'enregistrer les participants à une épreuve.";
+        include("views/v_accueil.php");
+        break;
+    }
+     ⁝
+}
+```
+`v_accueil` récupère les données de la variable `$message`
 ```php
 <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid py-5">
@@ -161,3 +195,6 @@ Ici c'est la vue `v_accueil` qui est appelée. Ele récupère les données de la
 ```
 >**ATTENTION**  
 > Ici le nom de la variable doit être identique dans l'action et dans la vue !
+
+L'affichage sera alors :
+![vueAccueil](images/vueAccueil.png)

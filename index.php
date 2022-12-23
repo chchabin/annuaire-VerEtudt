@@ -18,4 +18,4 @@ if (isset($_REQUEST['uc'])) {
 include "controllers/c_$uc.php";
 
 
-include("views/v_gabarit_pied.php");
+include 'views/v_gabarit_pied.php';
