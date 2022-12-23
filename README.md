@@ -1,11 +1,12 @@
 # 1 - Annuaire version étudiant
-Un club de bridge a souhaité créer une application pour recencer tous ses membres lors d'une compétition. 
-Un étudiant en informatique a durant son stage créer un debut d'application.  
+Un club de bridge a souhaité créer une application pour recenser tous ses membres lors d'une compétition. 
+Un étudiant en informatique a durant son stage créer un debut d'application.
 Les caractéristiques sont les suivantes :
 1. Langage : PHP, HTML, CSS
 2. Pattern :  MVC
 3. Framework css : [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 Pour l'instant cette application est locale. 
+Monsieur Geste le président de l'association souhaite faire quelques modifications.
 
 ## Mission 1 : Installation de l'application
 1. Faire un fork de annuaire-VerEtudt sur [https://github.com/chchabin/annuaire-VerEtudt](https://github.com/chchabin/annuaire-VerEtudt)  
@@ -17,44 +18,46 @@ Pour l'instant cette application est locale.
 
 
 
-## Mission 2 : Création de la fonctionalité liste membre
+## Mission 2 : Création de la fonctionalité liste des membres
 #### a - Maquette
 La maquette de la vue `v_listemembres.php` doit avoir cette apparence :
 ![vueListeMembre](images/vueListeMembre.PNG) 
 
 #### b - Fiches descriptives du cas d'utilisation à réaliser
 
-| **PROJET :**   Application  web de afficher membre   | 
-|------------------------------------------------------|
-| **Description cas d’utilisation**                    |
-| **Nom cas d’utilisation :**   Afficher les membres   |
-| **Acteur déclencheur :**   l’utilisateur             |
-| **Scénario nominal :**                               |                                                                                                                                                                                          
-| 1. L’utilisateur demande à afficher les membres.     |
-| 2. Le système retourne le vue listemembres           |
-| 3. L’utilisateur choisi de retourner à l’accueil.    |
-| 4. Le système retourne la vue accueil                |
-| **Extensions :**                                     |
-| **Exceptions :**                                     | 
+| **PROJET :**   Application  web de afficher les membres | 
+|---------------------------------------------------------|
+| **Description cas d’utilisation**                       |
+| **Nom cas d’utilisation :**   Afficher les membres      |
+| **Acteur déclencheur :**   l’utilisateur                |
+| **Scénario nominal :**                                  |                                                                                                                                                                                          
+| 1. L’utilisateur demande à afficher les membres.        |
+| 2. Le système retourne le vue listemembres              |
+| 3. L’utilisateur choisi de retourner à l’accueil.       |
+| 4. Le système retourne la vue accueil                   |
+| **Extensions :**                                        |
+| **Exceptions :**                                        | 
 ### c- fiches savoir
 [framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
-[la boucle foreach](http://chchabin.free.fr/php/php034ProgPhp_Boucles.html#bouclesforeach)  
-[les tableaux associatifs](http://chchabin.free.fr/php/php033ProgPhp_Tableaux.html#tableauAssociatif)  
+[la boucle foreach](http://chchabin.free.fr/docs/php/programmer/les-boucles/)  
+[les tableaux associatifs](http://chchabin.free.fr/docs/php/programmer/les-tableaux/)  
 
 **Ce qui vous est demandé de faire :**
 1. dans le fichier `m_model.php` trouvez la requête qui récupère tous les noms et prénom des membres.
 2. Testez votre résultat.
-3. dans le fichier `v_listemembres.php` construisez un tableau HTML et remplissez les lignes dynamiquement à partir de la variable `$les_membres` qui envoyée par le contrôleur.
+3. dans le fichier `v_listemembres.php` construisez un tableau HTML et remplissez les lignes dynamiquement à partir de la variable 
+`$les_membres` qui envoyée par le contrôleur.
 
-## Mission 3 : Création de la fonctionalité saisir membre
+## Mission 3 : Création de la fonctionalité saisir un membre
 #### a - Maquette
-La maquette de la vue doit avoir cette apparence :  
+La maquette de la vue `v_saisiemembre` doit avoir cette apparence :  
 ![v_saisieMembre](images/vueSaisieMembre.PNG)  
 La maquette de résultat doit avoir cette apparence:  
 ![v_saisieResult](images/vueSaisieResult.PNG)
+
 #### b - Fiches descriptives du cas d'utilisation à réaliser
 
-| **PROJET :**   Application  web de afficher membre                               | 
+| **PROJET :**   Application  web de saisir un membre                              | 
 |----------------------------------------------------------------------------------|
 | **Description cas d’utilisation**                                                |
 | **Nom cas d’utilisation :**   Saisir les membres                                 |
@@ -68,19 +71,19 @@ La maquette de résultat doit avoir cette apparence:
 | **Exceptions :**                                                                 |
 ### c- fiches savoir
 [framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
-[les formulaires](http://chchabin.free.fr/php/php044Transmission.html#transmissionFormRecup)
+[les formulaires](http://chchabin.free.fr/docs/php/transmission/transmission-script/)
 
 **Ce qui vous est demandé de faire :**
 1. dans le fichier `m_model.php` créez la fonction `insertMembre()` pour insérer un nouveau membre dans la base de données.
 2. dans le fichier `v_saisiemembre.php` et construisez un formulaire avec le nom et le prénom à saisir.
-3. modifiez le cas `controlesaisie` dans le contrôleur pour récupérer toutes les variables.
+3. modifiez l'action `controlesaisie` dans le contrôleur pour récupérer toutes les variables.
 4. modifiez le message envoyé par le contrôleur dans la vue `accueil.php`.
 
 
-## Mission 4 : Création de la fonctionalité supprimer membre
+## Mission 4 : Création de la fonctionalité supprimer un membre
 >Les membres seront supprimés un par un.
 #### a - Maquette
-La maquette de la vue doit avoir cette apparence :   
+La maquette de la vue `v_deletemembre` doit avoir cette apparence :   
 ![vueSupprimerMembre](images/vueSupprimerMembre.PNG)  
 La maquette de résultat doit avoir cette apparence:  
 ![vueSupprimerResult](images/vueSupprimerResult.PNG)
@@ -88,7 +91,7 @@ La maquette de résultat doit avoir cette apparence:
 
 #### b - Fiches descriptives du cas d'utilisation à réaliser
 
-| **PROJET :**   Application  web de afficher membre                               | 
+| **PROJET :**   Application  web de supprimer un membre                           | 
 |----------------------------------------------------------------------------------|
 | **Description cas d’utilisation**                                                |
 | **Nom cas d’utilisation :**   Supprimer un membre                                |
@@ -96,23 +99,63 @@ La maquette de résultat doit avoir cette apparence:
 | **Scénario nominal :**                                                           | 
 | 1. L’utilisateur demande à supprimer un membre.                                  |
 | 2. Le système retourne le formulaire de saisie                                   |
-| 3.  L’utilisateur choisi le membre et valide sa saisie.                          |
+| 3. L’utilisateur choisi le membre et valide sa saisie.                           |
 | 4. Le système retourne la vue accueil avec l'information sur l'etat de la saisie |
 | **Extensions :**                                                                 |
 | **Exceptions :**                                                                 |
 ### c- fiches savoir
 [framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
-[les formulaires](http://chchabin.free.fr/php/php044Transmission.html#transmissionFormRecup)  
-[formulaire et select](http://chchabin.free.fr/php/php044Transmission.html#transmissionFormSelect)
+[les formulaires](http://chchabin.free.fr/docs/php/transmission/transmission-script/)  
+[formulaire et select](http://chchabin.free.fr/docs/php/transmission/transmission-script/)
 
 **Ce qui vous est demandé de faire :**                                 
 1. dans le fichier `m_model.php` créez la fonction `deleteMembre()` qui prendra en paramètre l'id du membre,
 2. créez un fichier `v_deletemembre.php` dans lequel l'utilisateur chois le membre à supprimer dans une liste, puis valide la suppression,
-3. dans le contrôleur, créez le cas `supprimer` qui affiche la vue `v_deletemembre.php`,
+3. dans le contrôleur, créez l'action `supprimer` qui affiche la vue `v_deletemembre.php`,
 4. testez votre travail,
-5. dans le contrôleur, créez le cas `controledelete` pour récupérer les informations du formulaire et lancer la suppression dans le modèle.
-6. Affichez le résultat de la saisie dans la vue `accueil.php` (prevoyez le code dans le cas `controledelete` en conséquence).
-   pression
+5. dans le contrôleur, créez l'action `controledelete` pour récupérer les informations du formulaire et lancer la suppression dans le modèle.
+6. Affichez le résultat de la saisie dans la vue `accueil.php` (prevoyez le code dans l'action `controledelete` en conséquence).
+
+## Mission 5 : Création de la fonctionalité modifier un membre
+#### a - Maquette
+La maquette de la vue `v_choisirmembre` doit avoir la même apparence que la vue `v_deletemembre`  
+La maquette de résultat correspond à celle de celle de saisie d'un membre
+
+#### b - Fiches descriptives du cas d'utilisation à réaliser
+
+| **PROJET :**   Application  web de modifier un membre                                  | 
+|----------------------------------------------------------------------------------------|
+| **Description cas d’utilisation**                                                      |
+| **Nom cas d’utilisation :**   Saisir les membres                                       |
+| **Acteur déclencheur :**   l’utilisateur                                               |
+| **Scénario nominal :**                                                                 | 
+| 1. L’utilisateur demande à modifier un membre.                                         |
+| 2. Le système retourne le formulaire de saisie                                         |
+| 3. L’utilisateur choisi le membre et valide sa saisie.                                 |
+| 4. Le système retourne le formulaire de modification                                   |
+| 5. L’utilisateur modifie les informations et valide sa saisie.                         |
+| 6. Le système retourne la vue accueil avec l'information sur l'état de la modification |
+| **Extensions :**                                                                       |
+| **Exceptions :**                                                                       |
+
+### c- fiches savoir
+[framework bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  
+[les formulaires](http://chchabin.free.fr/docs/php/transmission/transmission-script/)  
+[formulaire et select](http://chchabin.free.fr/docs/php/transmission/transmission-script/)  
+[formulaire utilisation de la propriété value](https://codepen.io/binosor/pen/qBydvBo)
+
+**Ce qui vous est demandé de faire :**
+1. dans le fichier `m_model.php` créez la fonction `getUnMembre()` qui prendra en paramètre l'id du membre,
+2. modifiez le fichier `v_choisirmembre.php` avec la même structure que `v_deletemembre.php` mais qui a pour action `modifier`,
+3. dans le contrôleur, créez l'action `choisir` qui affiche la vue `v_choisirmembre.php`,
+4. testez votre travail,
+5. dans le contrôleur, créez l'action `modifier` pour récupérer les informations du formulaire et afficher la vue `v_saisiemembre.php`.
+6. modifier la vue `v_saisiemembre.php` pour qu'elle affiche les données du memebre choisi (attention, l'id du membre doit être récupérée mais pas affichée).
+7. dans le fichier `m_model.php` créez la fonction `updateMembre()` qui prend en paramètre l'id, le nom et le prénom.
+8. modifier l'action `controlesaisie` pour quelle appelle `updateMembre()` s'il existe un `id` dans le `REQUEST`,
+9. affichez le résultat de la saisie dans la vue `accueil.php`.
+
+
 # 2- Quelques explications
 
 ## a - Point d'entrée unique

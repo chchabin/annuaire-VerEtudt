@@ -13,7 +13,7 @@ switch ($action) {
     }
     case 'saisir':
     {
-        require "views/v_saisie.php";
+        require "views/v_saisiemembre.php";
         break;
     }
     case 'controlesaisie':
@@ -22,7 +22,7 @@ switch ($action) {
         // affecter $prenom
 
         if (empty($nom) || empty($prenom)) {
-            require "views/v_saisie.php";
+            require "views/v_saisiemembre.php";
         } else {
             $resultat = $pdo->insertMembre($nom, $prenom);
             include("views/v_accueil.php");
