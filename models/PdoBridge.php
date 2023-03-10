@@ -6,7 +6,7 @@ class PdoBridge
     private static string $bdd = 'dbname=annuaire';
     private static string $user = 'root';
     private static string $mdp = '';
-    private static $monPdoBridge = null;
+    private static  $monPdoBridge = null;
     /**
      * @var PDO   <--- need by PhpStorm to find Methods of PDO
      */
@@ -18,13 +18,14 @@ class PdoBridge
      */
     private function __construct()
     {
-        PdoBridge::$monPdo = new PDO(PdoBridge::$serveur . ';' . PdoBridge::$bdd, PdoBridge::$user, PdoBridge::$mdp);
-        PdoBridge::$monPdo->query("SET CHARACTER SET utf8");
+        self::$monPdo = new PDO(self::$serveur . ';' . self::$bdd, self::$user, self::$mdp);
+        self::$monPdo->query("SET CHARACTER SET utf8");
     }
 
     public function _destruct()
     {
-        PdoBridge::$monPdo = null;
+        self::$monPdo = null;
+
     }
 
     /**
@@ -35,17 +36,17 @@ class PdoBridge
      */
     public static function getPdoBridge()
     {
-        if (PdoBridge::$monPdoBridge == null) {
-            PdoBridge::$monPdoBridge = new PdoBridge();
+        if (self::$monPdoBridge == null) {
+            self::$monPdoBridge = new PdoBridge();
         }
-        return PdoBridge::$monPdoBridge;
+        return self::$monPdoBridge;
     }
 
     public function getLesMembres()
     {
         // modifiez la requête sql
         $sql = 'SELECT id FROM membres';
-        $lesLignes = PdoBridge::$monPdo->query($sql);
+        $lesLignes = self::$monPdo->query($sql);
         return $lesLignes->fetchALL(PDO::FETCH_ASSOC);
     }
 
@@ -53,7 +54,7 @@ class PdoBridge
     {
         // modifiez la requête sql
         $req = "SELECT id AS maxi FROM membres";
-        $res = PdoBridge::$monPdo->query($req);
+        $res = self::$monPdo->query($req);
         $lesLignes = $res->fetch();
         return 1 + intval($lesLignes["maxi"]);
     }
@@ -64,6 +65,6 @@ class PdoBridge
         $id = $this->getMaxId();
         // modifiez la requête sql
         $sql = 'INSERT INTO membres Value($id)';
-        $req = PdoBridge::$monPdo->exec($sql);
+        $req = self::$monPdo->exec($sql);
     }
 }

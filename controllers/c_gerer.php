@@ -1,5 +1,7 @@
 <?php
-switch ($action) {
+
+switch ($action??null) {
+
     case 'accueil':
     {
         $message="Ce site permet d'enregistrer les participants à une épreuve.";
@@ -7,6 +9,7 @@ switch ($action) {
         break;
     }
     case 'lister': {
+        /** @var PdoBridge $pdo */
         $les_membres=$pdo->getLesMembres();
         require 'views/v_listemembres.php';
         break;
@@ -18,6 +21,7 @@ switch ($action) {
     }
     case 'controlesaisie':
     {
+        /** @var PdoBridge $pdo */
         $nom = $_REQUEST['nom'];
         // affecter $prenom
 
@@ -35,6 +39,4 @@ switch ($action) {
         include("views/404.php");
         break;
     }
-
-
 }

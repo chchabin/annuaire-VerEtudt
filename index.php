@@ -1,11 +1,14 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) { session_start(); }
+
+include 'models/PdoBridge.php';
+
 include 'views/v_gabarit_entete.php';
-include 'models/m_model.php';
 include 'views/v_menu.php';
 
 $pdo=PdoBridge::getPdoBridge();
 
+//---Routage---
 $uc = 'gerer';
 $action = 'accueil';
 if (isset($_REQUEST['action'])) {
